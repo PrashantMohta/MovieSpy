@@ -3,7 +3,7 @@ import {ImovieSearchResult} from './DataInterfaces';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const APIkey:string="67e94004"
+const APIkey:string="INSERTAPIKEYHERE"
 const URLendpoint:string="http://www.omdbapi.com/"
 
 @Injectable({
