@@ -1,0 +1,14 @@
+<div style="width:100%;height:100%;">
+  <div class="pagetitle" [class.titleup]="search!=''"  (click)="home()"  >Movie Spy</div>
+
+  <div class="searchboxcontainer" [class.searchup]="search!=''">
+    <input type="text" class="searchbox" name="Searchbox"  [(ngModel)]="search" (keyup)="usertyped($event)" placeholder="Search" autofocus>
+    <div class="searchmessages" *ngIf="search==''" >Type in the search box to find movies</div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!--
+    <app-movie *ngIf="search!=''" [search]="search" ></app-movie>
+  -->
+</div>

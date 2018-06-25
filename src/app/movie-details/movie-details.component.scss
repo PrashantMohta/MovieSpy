@@ -1,0 +1,116 @@
+@import "../../colors.scss";
+@media (min-width:900px)
+{
+    .poster{
+        width:40%;
+        img{
+            width:40% !important;
+            max-width:300px !important;
+        }
+        border: {
+            style:none !important;
+        }
+    }
+    .Movietitle{
+        font: {
+            size:25px !important;
+        }
+    }
+    .description{
+        padding:50px 0px;
+        position:absolute;
+        top:0px !important;
+        right:0px !important;
+        width:50% !important;
+    }
+    .container{
+        position:relative;
+        border: {
+            style:solid;
+            width:2px;
+            color:$BGcolor;
+        }
+    }
+}
+
+
+@keyframes cardanim{
+    0%{transform: rotateY(-90deg);}
+    100%{transform: rotateY(10deg);}
+}
+
+.fulldetails{
+    animation: cardanim 0.5s ease-in-out;
+
+    box-sizing: border-box;
+    width:100%;
+    text-align:center;
+    margin:20px 0px;
+    padding:10px 5px;
+    border: {
+        style:solid;
+        width:2px;
+        color:$BGcolor;
+    }
+    .Movietitle{
+        border-radius: 5px;
+        font: {
+            weight:bold;
+            size:20px;
+        }
+        background: {
+            color:$Accentcolor;
+        }
+        padding:5px;
+        margin:10px -5px;
+    }
+    .genre{
+        padding:5px;
+    }
+    .poster{
+        border-radius: 10px;
+        margin:5px;
+        padding:5px;
+        border: {
+            style:solid;
+            width:2px;
+            color:$BGcolor;
+        }
+        img{
+            width:50%;
+            max-width:400px;
+            border-radius: 10px;
+            padding:0px;
+            border: {
+                style:solid;
+                width:4px;
+                color:lighten($Accentcolor,5%);
+            }
+            animation: {
+                name:cardanim;
+                duration:0.5s;
+            }
+        }
+    }
+    .description{
+        width:100%;
+        animation: cardanim 0.5s ease-in-out;
+
+    }
+    .plot{
+        margin:auto;
+        width:100%;
+        max-width:600px;
+        font: {
+            size:18px;
+        }
+        text-align:left;
+    }
+    .rating{
+        margin:10px;
+        padding:10px;
+        font: {
+            size:18px;
+        }
+    }
+}

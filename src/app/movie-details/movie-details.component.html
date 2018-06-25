@@ -1,0 +1,29 @@
+ 
+<div class="loading" *ngIf="!openDetails">
+        Loading ... 
+</div>
+<div class="fulldetails" *ngIf="openDetails">
+<div class="Movietitle">{{openDetails.Title}}<br> ({{openDetails.Language}}) ({{openDetails.Year}}) </div>
+Runtime {{openDetails.Runtime}}
+<div class="Genre"> {{openDetails.Genre}}</div>
+<div class="container">
+<div class="poster">
+  <img *ngIf="openDetails.Poster!='N/A'" [src]="openDetails.Poster">
+  <img *ngIf="openDetails.Poster=='N/A'" src="assets/noposter.jpg">
+
+</div>
+<div class="description">
+<div class="plot">
+    {{openDetails.Plot}}
+</div>
+
+<div class="rating" >
+<div *ngFor="let r of openDetails.Ratings">
+{{r.Source}} = {{r.Value}}
+</div>
+</div>
+</div>
+</div>
+
+</div>
+

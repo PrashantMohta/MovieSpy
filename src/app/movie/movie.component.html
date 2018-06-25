@@ -1,0 +1,43 @@
+
+<div class="container"> 
+    <div class="loading" *ngIf="!searchResults?.Response || !searchResults.Search">
+        Loading ... 
+    </div>
+    <div *ngIf="searchResults?.Response && searchResults.Search">
+      <div class="searchgroup">
+        <div class="searchstring">Movies matching "{{searchString}}" </div>
+        <div class="resultcount">{{searchResults.totalResults}} Total Results</div> 
+      </div>
+      <div class="resultsContainer" >
+        <div class="containmovies" *ngFor="let result of searchResults.Search">
+        <div class="movies">
+          <a [routerLink]="['/details/',result.imdbID]">
+          <div class="poster">
+              <img class="posterimageshadow" *ngIf="result.Poster!='N/A'" src={{result.Poster}} alt="{{result.Title}} poster">  
+            <img class="posterimage" *ngIf="result.Poster!='N/A'" src={{result.Poster}} alt="{{result.Title}} poster">
+            <img *ngIf="result.Poster=='N/A'" src="assets/noposter.jpg" alt="poster unavailabe">
+
+            <div class="details">
+                <div class="elem">{{result.Title}} ({{result.Year}})</div>
+
+                <!--<div class="elem">imdbID:{{result.imdbID}}</div>
+                <div class="elem">Type:{{result.Type}}</div>-->
+              </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div> 
+    <div class="searchmessages" *ngIf="searchResults?.Response=='False'">
+      Unable to fetch results ! <br> Error : {{searchResults?.Error}} 
+    </div>
+    
+  <div class="footer" *ngIf="searchResults?.Search">
+      [Results page {{pageno}} of {{maxPages | number:'1.0-0'}}] <br>
+      <a *ngIf="pageno>1" (click)="prevPage()">Previous page</a>
+    
+      <a *ngIf="pageno<maxPages" (click)="nextPage()">Next page</a>
+      <br>
+  </div>
+</div>

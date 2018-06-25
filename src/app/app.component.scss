@@ -1,0 +1,115 @@
+@import "./../colors.scss";
+
+
+@media (max-width:400px)
+{
+    .pagetitle{
+        font: {
+             size:60px !important;
+        }
+        line-height:40px;
+    }
+}
+
+@media (min-width:800px)
+{
+    .searchboxcontainer{
+        left:50% ;
+        transform: translate(-50%,0);
+        max-width: 800px;
+    }
+}
+.searchbox {
+    box-sizing: border-box;
+    background: {
+        color:darken($Accentcolor,11%);
+    }
+    
+    margin:10px 0;
+    padding:10px;
+    height:50px;
+    width:100%;
+    font: {
+        size:20px;
+        weight:bold;
+    }
+    color:$Textcolor;
+
+    border: {
+    style:solid;
+    width:2px;
+    color:$Accentcolor;
+    radius:5px;
+    }
+    
+outline: none;
+ &::placeholder{
+    color:$Textcolor;
+    opacity:0.5;
+ }
+}
+.searchboxcontainer{
+    position:relative;
+    top:200px;
+    transition:all 0.5s ease-in-out;
+}
+.searchboxcontainer::before{
+    background-image: url(..\assets\baseline_search_black_36dp.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px; 
+    height: 30px;
+    content:"";
+    opacity:0.3;
+    position:absolute;
+    top:20px;
+    right:10px;
+    bottom:0px;
+    
+}
+
+@keyframes cardanim{
+    0%{transform: rotateY(-90deg);}
+    100%{transform: rotateY(10deg);}
+}
+
+
+.searchboxcontainer::after{
+    
+    content:"Powered by OMDB";
+    position:absolute;
+    right:0px;
+    top:65px;
+    font: {
+        size:10px;
+    }
+}
+
+.searchmessages{
+ padding:50px 0px;
+ 
+ animation: {
+    name:cardanim;
+    duration:0.5s;
+}
+}
+.searchup{top:0px;
+    transition:all 0.5s ease-in-out;}
+div .titleup{top:0px;
+    transition:all 0.5s ease-in-out;}
+.pagetitle{
+    font-family: 'Racing Sans One', cursive;
+    cursor: pointer;
+    user-select: none;
+    position:relative;
+    top:150px;
+    font: {
+        size:70px;
+    }
+    text-align:center;
+    transition:all 0.5s ease-in-out;
+    animation: {
+        name:cardanim;
+        duration:0.5s;
+    }
+}
